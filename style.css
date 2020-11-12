@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem;
+}
+
+.text__foreign,
+.text__native {
+  display: flex;
+  justify-content: center;
+}
+
+.text__foreign {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+.text__native {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 15rem 0 15rem;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+  text-decoration: underline;
+}
