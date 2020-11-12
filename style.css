@@ -28,13 +28,13 @@ h1 {
 
 .text__foreign {
   font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   padding-bottom: 2rem;
 }
 
 .text__native {
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 2rem;
 }
 
@@ -43,6 +43,24 @@ h1 {
   justify-content: center;
   flex-direction: column;
   margin: 0 15rem 0 15rem;
+}
+
+.input__box {
+  height: 4rem;
+  text-align: center;
+  font: 'Open Sans';
+  font-size: 2rem;
+}
+
+.button {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
 }
 
 .correct {
