@@ -1,6 +1,4 @@
 // TODO Need to see if I can convert into a JSON file and FETCH
-// TODO Add a way to test WPM
-// TODO Add timer
 // TODO Add a way to save the words?
 // TODO Figure out a way to categorise the words and give them an option
 
@@ -233,10 +231,19 @@ const foreignWords = [
 
 // Need to target every element
 const foreign = document.querySelector('.text__foreign')
+const randomDiv = document.getElementById('randomDiv') // This needs to be hidden
+const speed = document.getElementById('speed')
 const translation = document.querySelector('.text__native')
 const textArea = document.getElementById('textForeign')
 const startBtn = document.getElementById('start')
 const newWordBtn = document.getElementById('newWord')
+
+let endTimerOne
+let endTimerTwo
+let startTimerOne
+let startTimerTwo
+let firstCalc
+let secCalc
 
 // Changes depending on if all the text is input correctly
 let correct = true
@@ -244,14 +251,13 @@ let correct = true
 // Start with the text area empty
 textArea.value = ''
 
-// A function to split the words and put them into a span. That will give me more control for later on
 const start = () => {
   const random = Math.floor(Math.random() * foreignWords.length)
 
+  // A way to split the words and put them into a span. That will give me more control for later on
   foreign.innerHTML = ''
   textArea.value = ''
   textArea.placeholder = ''
-  console.log(textArea)
   foreignWords[random].foreign.split('').forEach((i) => {
     const charSpan = document.createElement('span')
     charSpan.innerText = i
@@ -259,6 +265,28 @@ const start = () => {
   })
   // To add the translated word as well
   translation.innerHTML = foreignWords[random].translation
+  randomDiv.innerHTML = foreignWords[random].foreign
+
+  // To check the amount of words in the randomDiv
+  let amount = randomDiv.innerHTML.split(' ').length
+
+  // A function to calculate time elapsed between the start() function activation times
+  // Also calculates the WPM
+  foreign.classList.toggle('time')
+  if (foreign.classList.contains('time')) {
+    startTimerOne = new Date()
+    endTimerTwo = new Date()
+    firstCalc = (endTimerTwo - startTimerTwo) / 1000 / 60
+    speed.innerHTML = `${Math.round(amount / firstCalc)} WPM`
+  } else {
+    startTimerTwo = new Date()
+    endTimerOne = new Date()
+    secCalc = (endTimerOne - startTimerOne) / 1000 / 60
+    speed.innerHTML = `${Math.round(amount / secCalc)} WPM`
+  }
+  if (speed.innerHTML === 'NaN WPM') {
+    speed.innerHTML = ''
+  }
 }
 
 //To figure out how to check the input to the answer
@@ -293,16 +321,3 @@ newWordBtn.addEventListener('click', () => {
 textArea.addEventListener('keyup', (e) => {
   if (correct && e.keyCode === 13) start()
 })
-
-// // To toggle the Play and Pause button
-// startBtn.addEventListener('click', () => {
-//   if (startBtn.innerText === 'start') {
-//     startBtn.innerText = 'pause'
-//     start()
-//   } else {
-//     startBtn.innerText = 'start'
-//     foreign.innerHTML = ''
-//     translation.innerHTML = ''
-//     textArea.value = null
-//   }
-// })
