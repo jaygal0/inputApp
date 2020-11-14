@@ -1,6 +1,3 @@
-// TODO Figure out a way to categorise the words and give them an option
-// TODO A filter for sentences, words, numbers, verbs, nouns, stems
-// TODO Create a spreadsheet that is organised properly
 // TODO Add a way to save the words?
 
 // Need to target every element
@@ -11,6 +8,7 @@ const translation = document.querySelector('.text__native')
 const textArea = document.getElementById('textForeign')
 const startBtn = document.getElementById('start')
 const newWordBtn = document.getElementById('newWord')
+const filterBtns = document.querySelectorAll('.filter__btns')
 
 // To help calculate the WPM
 let endTimerOne
@@ -19,6 +17,18 @@ let startTimerOne
 let startTimerTwo
 let firstCalc
 let secCalc
+
+// To know which filter button is being pressed
+let filter = 'All'
+
+// To understand which filter button is being clicked on
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    filter = e.currentTarget.dataset.id
+    start()
+    speed.innerHTML = ''
+  })
+})
 
 // Changes depending on if all the text is input correctly
 let correct = true
@@ -29,19 +39,28 @@ textArea.value = ''
 const start = () => {
   // URL is hosted on my GitHub
   const url =
-    'http://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/a909097bcfe2e47787c1a2d4a895448411b8ae81/koreanwords.json'
+    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/5477845479a92f96746034c78ac456893e55b5e2/koreanwords.json'
 
-  // To retrieve and parse the JSON data
+  // To retrieve and parse the (filtered) JSON data
   function retrieve() {
     return fetch(url)
       .then((response) => response.json())
-      .then((data) => data)
+      .then((data) =>
+        data.filter((item) => {
+          if (filter === 'All') {
+            return item
+          } else {
+            return item.type.includes(filter)
+          }
+        })
+      )
   }
+
   async function newWord() {
     const words = await retrieve()
     const randomNo = Math.floor(Math.random() * words.length)
-    const foreignWord = words[randomNo].foreign
-    const transWord = words[randomNo].translation
+    const foreignWord = words[randomNo].korean
+    const transWord = words[randomNo].english
 
     // A way to split the words and put them into a span. That will give me more control for later on
     foreign.innerHTML = ''
@@ -105,10 +124,22 @@ textArea.addEventListener('input', () => {
 
 // To allow the user to hit the 'New Word' button
 newWordBtn.addEventListener('click', () => {
-  if (correct === true) start()
+  if (newWordBtn.innerHTML === 'start') {
+    newWordBtn.innerHTML = 'new word'
+    start()
+  } else if (textArea.value === '') {
+  } else if (correct) {
+    start()
+  }
 })
 
 // To allow the user to hit 'Enter' for a new word
 textArea.addEventListener('keyup', (e) => {
-  if (correct && e.keyCode === 13) start()
+  if (newWordBtn.innerHTML === 'start' && e.keyCode === 13) {
+    newWordBtn.innerHTML = 'new word'
+    start()
+  } else if (textArea.value === '') {
+  } else if (correct && e.keyCode === 13) {
+    start()
+  }
 })

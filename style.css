@@ -1,3 +1,4 @@
+/* TODO Build an interactive keyboard using HTML & CSS */
 /* TODO Style the webpage accordingly*/
 
 * {
@@ -40,6 +41,19 @@ h1 {
   font-size: 2rem;
 }
 
+.filter {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.filter__btns {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border-width: 1px;
+}
+
 .input {
   display: flex;
   justify-content: center;
@@ -50,8 +64,9 @@ h1 {
 .input__box {
   height: 4rem;
   text-align: center;
-  font: 'Open Sans';
+  font-family: 'Open sans';
   font-size: 2rem;
+  outline: none;
 }
 
 .button {
@@ -59,10 +74,16 @@ h1 {
   padding: 1rem;
 }
 
+.speed {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
 .img {
   display: flex;
   justify-content: center;
-  padding: 4rem;
+  padding: 2rem;
 }
 
 .correct {
