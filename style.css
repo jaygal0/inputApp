@@ -1,4 +1,3 @@
-/* TODO Build an interactive keyboard using HTML & CSS */
 /* TODO Style the webpage accordingly*/
 
 * {
@@ -74,10 +73,45 @@
   font-size: 1.5rem;
 }
 
-.img {
+.keyboard {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  flex-direction: column;
+}
+
+.keyboard__top,
+.keyboard__middle,
+.keyboard__bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.keyboard__middle {
+  transform: translate(20px);
+}
+.keyboard--btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  border: solid 0.5px black;
+  border-radius: 15px;
+  margin: 0.2rem;
+}
+
+.keyboard--english {
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.keyboard--korean {
+  color: blue;
+}
+
+.keyboard--alt {
+  color: red;
 }
 
 .correct {
@@ -91,4 +125,8 @@
 
 .hidden {
   display: none;
+}
+
+.activeBtn {
+  background: green;
 }

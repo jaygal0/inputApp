@@ -10,6 +10,32 @@ const startBtn = document.getElementById('start')
 const newWordBtn = document.getElementById('newWord')
 const filterBtns = document.querySelectorAll('.filter__btns')
 const filterDiv = document.getElementById('filterDiv')
+const keyboardBtns = document.querySelectorAll('.keyboard--btns')
+
+// document.addEventListener('keydown', (e) => {
+//   console.log(e)
+// })
+
+// To make the keyboard responsive for an english keyboard and a korean keyboard
+keyboardBtns.forEach((btn) => {
+  window.addEventListener('keydown', (e) => {
+    if (e.keyCode == btn.dataset.id) {
+      btn.classList.add('activeBtn')
+    }
+  })
+  window.addEventListener('keyup', (e) => {
+    if (e.keyCode == btn.dataset.id) {
+      btn.classList.remove('activeBtn')
+    }
+  })
+  textArea.addEventListener('input', (e) => {
+    if (btn.dataset.kor === e.data) {
+      btn.classList.add('activeBtn')
+    } else {
+      btn.classList.remove('activeBtn')
+    }
+  })
+})
 
 // To help calculate the WPM
 let endTimerOne
