@@ -6,25 +6,17 @@
   padding: 0;
 }
 
-h1 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 5rem;
-}
-
 .title {
   display: flex;
   justify-content: center;
 }
 
-.text {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2rem;
+.title__header {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 5rem;
 }
 
-.text__foreign,
-.text__native {
+.text {
   display: flex;
   justify-content: center;
 }
@@ -36,6 +28,8 @@ h1 {
 }
 
 .text__native {
+  display: flex;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   text-transform: capitalize;
   font-size: 2rem;

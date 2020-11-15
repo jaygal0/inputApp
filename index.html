@@ -15,19 +15,22 @@
     <main>
       <div class="hidden" id="randomDiv"></div>
       <div class="title">
-        <h1>Simple Korean Words</h1>
+        <h1 class="title__header">Simple Korean Words</h1>
       </div>
-      <div class="text">
-        <div class="text__foreign"></div>
-        <div class="text__native"></div>
+      <div class="container">
+        <div class="text">
+          <div class="text__foreign"></div>
+        </div>
       </div>
-      <div class="filter">
+      <div class="text__native"></div>
+      <div class="filter hidden" id="filterDiv">
         <button class="filter__btns" data-id="All">all</button>
         <button class="filter__btns" data-id="Adjective">adjectives</button>
         <button class="filter__btns" data-id="Adverb">adverb</button>
         <button class="filter__btns" data-id="Noun">nouns</button>
         <button class="filter__btns" data-id="Pronoun">pronouns</button>
         <button class="filter__btns" data-id="Verb">verbs</button>
+        <button class="filter__btns" data-id="Phrase">phrases</button>
       </div>
       <div class="input">
         <label for="textForeign"></label>
@@ -37,7 +40,6 @@
           id="textForeign"
           placeholder="hit start to begin"
         />
-        <!-- <textarea name="textForeign" id="textForeign"></textarea> -->
         <button class="button" type="button" id="newWord">start</button>
       </div>
       <div class="speed" id="speed"></div>

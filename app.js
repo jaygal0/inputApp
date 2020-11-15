@@ -9,6 +9,7 @@ const textArea = document.getElementById('textForeign')
 const startBtn = document.getElementById('start')
 const newWordBtn = document.getElementById('newWord')
 const filterBtns = document.querySelectorAll('.filter__btns')
+const filterDiv = document.getElementById('filterDiv')
 
 // To help calculate the WPM
 let endTimerOne
@@ -39,7 +40,7 @@ textArea.value = ''
 const start = () => {
   // URL is hosted on my GitHub
   const url =
-    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/5477845479a92f96746034c78ac456893e55b5e2/koreanwords.json'
+    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/e533a0834895edf36d68c19939091e4742cd192d/koreanwords.json'
 
   // To retrieve and parse the (filtered) JSON data
   function retrieve() {
@@ -56,6 +57,10 @@ const start = () => {
       )
   }
 
+  // To show the filter buttons after hitting the start button
+  filterDiv.classList.remove('hidden')
+
+  // To add a new word into the game
   async function newWord() {
     const words = await retrieve()
     const randomNo = Math.floor(Math.random() * words.length)
