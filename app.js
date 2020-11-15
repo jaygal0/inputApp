@@ -33,6 +33,7 @@ filterBtns.forEach((btn) => {
 
 // Changes depending on if all the text is input correctly
 let correct = true
+let correctWord = false
 
 // Start with the text area empty
 textArea.value = ''
@@ -109,6 +110,13 @@ textArea.addEventListener('input', () => {
   const arrayForeign = foreign.querySelectorAll('span')
   const arrayInput = textArea.value.split('')
 
+  // To check if the entire word is correct
+  if (foreign.innerHTML.includes('incorrect')) {
+    correctWord = false
+  } else {
+    correctWord = true
+  }
+
   arrayForeign.forEach((char, index) => {
     const character = arrayInput[index]
     if (character == null) {
@@ -133,7 +141,7 @@ newWordBtn.addEventListener('click', () => {
     newWordBtn.innerHTML = 'new word'
     start()
   } else if (textArea.value === '') {
-  } else if (correct) {
+  } else if (correct && correctWord) {
     start()
   }
 })
@@ -144,7 +152,7 @@ textArea.addEventListener('keyup', (e) => {
     newWordBtn.innerHTML = 'new word'
     start()
   } else if (textArea.value === '') {
-  } else if (correct && e.keyCode === 13) {
+  } else if (correct && correctWord && e.keyCode === 13) {
     start()
   }
 })
