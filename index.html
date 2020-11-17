@@ -8,31 +8,35 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@400;800&display=swap"
       rel="stylesheet"
     />
-    <title>Translation App</title>
+    <title>Input: Learn a Language By Typing</title>
   </head>
-  <body>
-    <head> </head>
+  <body class="containerBox">
+    <header>
+      <div class="logo">
+        <div class="logo__icon">input</div>
+        <div class="logo__subheading">this is dummy text for now</div>
+      </div>
+      <nav class="navigation">
+        <ul class="navigation__unlisted">
+          <li class="navigation__listItems">home</li>
+          <li class="navigation__listItems">about</li>
+          <li class="navigation__listItems">donate</li>
+        </ul>
+      </nav>
+    </header>
     <main>
-      <div class="hidden" id="randomDiv"></div>
-      <div class="title">
-        <h1 class="title__header">Simple Korean Words</h1>
-      </div>
-      <div class="container">
-        <div class="text">
-          <div class="text__foreign"></div>
+      <section class="translation">
+        <div class="hidden" id="needsToBeHidden"></div>
+        <div class="translation__box">
+          <h3 class="translation__box--header">korean</h3>
+          <div class="translation__word--foreign"></div>
         </div>
-      </div>
-      <div class="text__native"></div>
-      <div class="filter hidden" id="filterDiv">
-        <button class="filter__btns" data-id="All">all</button>
-        <button class="filter__btns" data-id="Adjective">adjectives</button>
-        <button class="filter__btns" data-id="Adverb">adverb</button>
-        <button class="filter__btns" data-id="Noun">nouns</button>
-        <button class="filter__btns" data-id="Pronoun">pronouns</button>
-        <button class="filter__btns" data-id="Verb">verbs</button>
-        <button class="filter__btns" data-id="Phrase">phrases</button>
-      </div>
-      <div class="input">
+        <div class="translation__box">
+          <h3 class="translation__box--header">english</h3>
+          <div class="translation__word--english"></div>
+        </div>
+      </section>
+      <section class="input">
         <label for="textForeign"></label>
         <input
           class="input__box"
@@ -40,10 +44,20 @@
           id="textForeign"
           placeholder="hit start to begin"
         />
-        <button class="button" type="button" id="newWord">start</button>
-      </div>
+        <button class="input__btn btn" type="button" id="newWord">start</button>
+      </section>
+      <!-- MAKE SURE THIS IS HIDDEN IN THE FINAL -->
+      <section class="filter" id="filterDiv">
+        <button class="filter__btns" data-id="All">all</button>
+        <button class="filter__btns" data-id="Adjective">adjectives</button>
+        <button class="filter__btns" data-id="Adverb">adverb</button>
+        <button class="filter__btns" data-id="Noun">nouns</button>
+        <button class="filter__btns" data-id="Pronoun">pronouns</button>
+        <button class="filter__btns" data-id="Verb">verbs</button>
+        <button class="filter__btns" data-id="Phrase">phrases</button>
+      </section>
       <div class="speed" id="speed"></div>
-      <div class="keyboard">
+      <section class="keyboard">
         <div class="keyboard__top">
           <div class="keyboard--btns" data-id="81" data-kor="ㅂ">
             <div class="keyboard--english">q</div>
@@ -196,13 +210,33 @@
             <div class="keyboard--korean">/</div>
           </div>
         </div>
-      </div>
-
-      <!-- <div class="img">
-        <img class="img__keyboard" src="img/keyboard.jpg" alt="" />
-      </div> -->
+      </section>
+      <div class="help">don't know how to change your keyboard input?</div>
     </main>
-    <footer></footer>
+
+    <footer>
+      <div class="newsletter">
+        <h3 class="newsletter__header">subscribe</h3>
+        <label for="newsletter"></label>
+        <!-- I think I need to change the 'type' to 'submit' -->
+        <input
+          class="newsletter__input"
+          type="text"
+          id="newsletter"
+          placeholder="email"
+        />
+        <!-- Not sure if I need the 'id' here? -->
+        <button class="newsletter__btn btn" type="button" id="submit">
+          submit
+        </button>
+      </div>
+      <div class="navFooter">
+        <ul class="navFooter__unlisted">
+          <li class="navFooter__listItems">contact</li>
+          <li class="navFooter__listItems">privacy</li>
+        </ul>
+      </div>
+    </footer>
     <script src="app.js"></script>
   </body>
 </html>

@@ -3,16 +3,16 @@
 // TODO Add if / else statment when the keycode === 229 turn on Korean translation
 
 // Need to target every element
-const foreign = document.querySelector('.text__foreign')
-const randomDiv = document.getElementById('randomDiv') // This needs to be hidden
-const speed = document.getElementById('speed')
-const translation = document.querySelector('.text__native')
+const hiddenDiv = document.getElementById('needsToBeHidden') // This needs to be hidden
+const foreign = document.querySelector('.translation__word--foreign')
+const translation = document.querySelector('.translation__word--english')
 const textArea = document.getElementById('textForeign')
-const startBtn = document.getElementById('start')
-const newWordBtn = document.getElementById('newWord')
 const filterBtns = document.querySelectorAll('.filter__btns')
 const filterDiv = document.getElementById('filterDiv')
+const startBtn = document.getElementById('start')
+const newWordBtn = document.getElementById('newWord')
 const keyboardBtns = document.querySelectorAll('.keyboard--btns')
+const speed = document.getElementById('speed')
 
 // document.addEventListener('keydown', (e) => {
 //   console.log(e)
@@ -107,12 +107,12 @@ const start = () => {
     })
     // To add the translated word as well
     translation.innerHTML = transWord
-    randomDiv.innerHTML = foreignWord
+    hiddenDiv.innerHTML = foreignWord
   }
   newWord()
 
-  // To check the amount of words in the randomDiv
-  let amount = randomDiv.innerHTML.split(' ').length
+  // To check the amount of words in the hiddenDiv
+  let amount = hiddenDiv.innerHTML.split(' ').length
 
   // A function to calculate time elapsed between the start() function activation times
   // Also calculates the WPM
