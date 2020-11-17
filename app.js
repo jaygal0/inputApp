@@ -1,4 +1,6 @@
 // TODO Add a way to save the words?
+// TODO Figure out a way to create the keyboard interactive for any language
+// TODO Add if / else statment when the keycode === 229 turn on Korean translation
 
 // Need to target every element
 const foreign = document.querySelector('.text__foreign')
