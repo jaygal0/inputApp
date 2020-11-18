@@ -1,22 +1,15 @@
-// TODO Add a way to save the words?
-// TODO Figure out a way to create the keyboard interactive for any language
-// TODO Add if / else statment when the keycode === 229 turn on Korean translation
-
 // Need to target every element
 const hiddenDiv = document.getElementById('needsToBeHidden') // This needs to be hidden
 const foreign = document.querySelector('.translation__word--foreign')
 const translation = document.querySelector('.translation__word--english')
 const textArea = document.getElementById('textForeign')
+const inputBox = document.querySelector('.input__box')
 const filterBtns = document.querySelectorAll('.filter__btns')
 const filterDiv = document.getElementById('filterDiv')
 const startBtn = document.getElementById('start')
 const newWordBtn = document.getElementById('newWord')
 const keyboardBtns = document.querySelectorAll('.keyboard--btns')
 const speed = document.getElementById('speed')
-
-// document.addEventListener('keydown', (e) => {
-//   console.log(e)
-// })
 
 // To make the keyboard responsive for an english keyboard and a korean keyboard
 keyboardBtns.forEach((btn) => {
@@ -59,6 +52,21 @@ filterBtns.forEach((btn) => {
   })
 })
 
+// A For loop to change active filter buttons
+const filterBtnsActive = document.getElementsByClassName('filter__btns')
+for (let i = 0; i < filterBtnsActive.length; i++) {
+  filterBtnsActive[i].addEventListener('click', function () {
+    let activeFilter = document.getElementsByClassName('activeFilter')
+    if (activeFilter.length > 0) {
+      activeFilter[0].className = activeFilter[0].className.replace(
+        'activeFilter',
+        ''
+      )
+      this.className += ' activeFilter'
+    }
+  })
+}
+
 // Changes depending on if all the text is input correctly
 let correct = true
 let correctWord = false
@@ -69,7 +77,7 @@ textArea.value = ''
 const start = () => {
   // URL is hosted on my GitHub
   const url =
-    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/e533a0834895edf36d68c19939091e4742cd192d/koreanwords.json'
+    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/f829b835c4ae6c94348f90cd4a5ca6026fd5ca28/koreanwords.json'
 
   // To retrieve and parse the (filtered) JSON data
   function retrieve() {
@@ -96,6 +104,9 @@ const start = () => {
     const foreignWord = words[randomNo].korean
     const transWord = words[randomNo].english
 
+    // To remove the small placeholder font setting at the beginning of the game
+    inputBox.classList.remove('input__box--start')
+
     // A way to split the words and put them into a span. That will give me more control for later on
     foreign.innerHTML = ''
     textArea.value = ''
@@ -110,6 +121,9 @@ const start = () => {
     hiddenDiv.innerHTML = foreignWord
   }
   newWord()
+
+  // To focus on the input box after hitting new word or a filter
+  inputBox.focus()
 
   // To check the amount of words in the hiddenDiv
   let amount = hiddenDiv.innerHTML.split(' ').length

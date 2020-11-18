@@ -1,3 +1,15 @@
+<!-- TODO Add all the correct words and phrases -->
+<!-- TODO Update fonts -->
+<!-- TODO Wireframe the About Page -->
+<!-- TODO Wireframe the Donate Page -->
+<!-- TODO Wireframe the Contact Page -->
+<!-- TODO Wireframe the Privacy Page -->
+<!-- TODO Create a set timer to remind people to donate -->
+<!-- TODO Figure out how to align the text in the translation div properly -->
+<!-- TODO Brand Design -->
+<!-- TODO Figure out a way to create the keyboard interactive for any language -->
+<!-- TODO FEATURE - An option to save words to a deck for later review -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +26,7 @@
     <header>
       <div class="logo">
         <div class="logo__icon">input</div>
-        <div class="logo__subheading">this is dummy text for now</div>
+        <div class="logo__subheading">learn a language by typing</div>
       </div>
       <nav class="navigation">
         <ul class="navigation__unlisted">
@@ -29,7 +41,9 @@
         <div class="hidden" id="needsToBeHidden"></div>
         <div class="translation__box">
           <h3 class="translation__box--header">korean</h3>
-          <div class="translation__word--foreign"></div>
+          <div class="translation__box--span">
+            <div class="translation__word--foreign"></div>
+          </div>
         </div>
         <div class="translation__box">
           <h3 class="translation__box--header">english</h3>
@@ -39,16 +53,17 @@
       <section class="input">
         <label for="textForeign"></label>
         <input
-          class="input__box"
+          class="input__box input__box--start"
           type="text"
           id="textForeign"
-          placeholder="hit start to begin"
+          placeholder="hit enter or click on 'start'"
+          autofocus
         />
-        <button class="input__btn btn" type="button" id="newWord">start</button>
       </section>
+      <button class="input__btn btn" type="button" id="newWord">start</button>
       <!-- MAKE SURE THIS IS HIDDEN IN THE FINAL -->
-      <section class="filter" id="filterDiv">
-        <button class="filter__btns" data-id="All">all</button>
+      <section class="filter hidden" id="filterDiv">
+        <button class="filter__btns activeFilter" data-id="All">all</button>
         <button class="filter__btns" data-id="Adjective">adjectives</button>
         <button class="filter__btns" data-id="Adverb">adverb</button>
         <button class="filter__btns" data-id="Noun">nouns</button>
@@ -216,19 +231,21 @@
 
     <footer>
       <div class="newsletter">
-        <h3 class="newsletter__header">subscribe</h3>
-        <label for="newsletter"></label>
-        <!-- I think I need to change the 'type' to 'submit' -->
-        <input
-          class="newsletter__input"
-          type="text"
-          id="newsletter"
-          placeholder="email"
-        />
-        <!-- Not sure if I need the 'id' here? -->
-        <button class="newsletter__btn btn" type="button" id="submit">
-          submit
-        </button>
+        <h3 class="newsletter__header">subscribe for more learning games</h3>
+        <div class="newsletter__box">
+          <label for="newsletter"></label>
+          <!-- I think I need to change the 'type' to 'submit' -->
+          <input
+            class="newsletter__input"
+            type="text"
+            id="newsletter"
+            placeholder="enter your email here"
+          />
+          <!-- Not sure if I need the 'id' here? -->
+          <button class="newsletter__btn btn" type="button" id="submit">
+            sign up
+          </button>
+        </div>
       </div>
       <div class="navFooter">
         <ul class="navFooter__unlisted">
