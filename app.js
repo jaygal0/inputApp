@@ -77,7 +77,7 @@ textArea.value = ''
 const start = () => {
   // URL is hosted on my GitHub
   const url =
-    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/f829b835c4ae6c94348f90cd4a5ca6026fd5ca28/koreanwords.json'
+    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/fe98aed4d70e232ff2eb446445611e09b9ef9dd7/koreanwords.json'
 
   // To retrieve and parse the (filtered) JSON data
   function retrieve() {

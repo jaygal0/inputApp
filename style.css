@@ -62,13 +62,13 @@ main {
 .translation__box {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .translation__box--header {
   text-transform: capitalize;
   font-size: 2rem;
   color: #17c3b2;
+  margin: 0 auto;
   margin-bottom: 30px;
 }
 
@@ -77,16 +77,18 @@ main {
   justify-content: center;
 }
 .translation__word--foreign {
-  font-size: 3rem;
+  font-size: 2rem;
   color: black;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .translation__word--english {
   text-transform: capitalize;
-  font-size: 3rem;
+  font-size: 2rem;
   color: black;
-  display: flex;
-  justify-content: space-around;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .input {
@@ -143,6 +145,7 @@ main {
   background: #ffcb77;
   text-transform: uppercase;
   margin-bottom: 30px;
+  letter-spacing: 0.1em;
 }
 
 .speed {
@@ -266,6 +269,7 @@ footer {
   margin-left: 30px;
   text-transform: capitalize;
   font-size: 0.7rem;
+  letter-spacing: 0.1em;
 }
 
 .navFooter {
