@@ -8,6 +8,7 @@ const filterBtns = document.querySelectorAll('.filter__btns')
 const filterDiv = document.getElementById('filterDiv')
 const startBtn = document.getElementById('start')
 const newWordBtn = document.getElementById('newWord')
+const skipBtn = document.getElementById('skip')
 const keyboardBtns = document.querySelectorAll('.keyboard--btns')
 const speed = document.getElementById('speed')
 
@@ -77,7 +78,7 @@ textArea.value = ''
 const start = () => {
   // URL is hosted on my GitHub
   const url =
-    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/fe98aed4d70e232ff2eb446445611e09b9ef9dd7/koreanwords.json'
+    'https://gist.githubusercontent.com/jaygal0/7330ba460ffdf7b6b24e958b7be5b623/raw/074f6c41fb0ccae8496b29d743c153fdd1217e16/koreanwords.json'
 
   // To retrieve and parse the (filtered) JSON data
   function retrieve() {
@@ -121,6 +122,8 @@ const start = () => {
     hiddenDiv.innerHTML = foreignWord
   }
   newWord()
+  // To show the skip button when starting the game
+  skipBtn.classList.remove('hidden')
 
   // To focus on the input box after hitting new word or a filter
   inputBox.focus()
@@ -180,7 +183,7 @@ textArea.addEventListener('input', () => {
 // To allow the user to hit the 'New Word' button
 newWordBtn.addEventListener('click', () => {
   if (newWordBtn.innerHTML === 'start') {
-    newWordBtn.innerHTML = 'new word'
+    newWordBtn.innerHTML = 'next word'
     start()
   } else if (textArea.value === '') {
   } else if (correct && correctWord) {
@@ -191,10 +194,14 @@ newWordBtn.addEventListener('click', () => {
 // To allow the user to hit 'Enter' for a new word
 textArea.addEventListener('keyup', (e) => {
   if (newWordBtn.innerHTML === 'start' && e.keyCode === 13) {
-    newWordBtn.innerHTML = 'new word'
+    newWordBtn.innerHTML = 'next word'
     start()
   } else if (textArea.value === '') {
   } else if (correct && correctWord && e.keyCode === 13) {
     start()
   }
+})
+
+skipBtn.addEventListener('click', () => {
+  start()
 })
