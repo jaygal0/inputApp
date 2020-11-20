@@ -11,6 +11,38 @@ const newWordBtn = document.getElementById('newWord')
 const skipBtn = document.getElementById('skip')
 const keyboardBtns = document.querySelectorAll('.keyboard--btns')
 const speed = document.getElementById('speed')
+const modal = document.querySelector('.modalContainer')
+const donateBtn = document.querySelector('.donateBtn')
+const main = document.querySelector('.main')
+const header = document.querySelector('.header')
+const footer = document.querySelector('.footer')
+
+const modalAppear = () => {
+  modal.classList.toggle('hidden')
+  main.classList.toggle('blurred')
+  header.classList.toggle('blurred')
+  footer.classList.toggle('blurred')
+}
+
+// Let the modal appear after x amount of miliseconds
+setTimeout(() => {
+  modalAppear()
+}, 300000)
+
+// Make the modal appear in the middle of the screen
+donateBtn.addEventListener('click', (e) => {
+  modalAppear()
+})
+
+// Allow the user to click outside the modal to close it
+window.addEventListener('click', (e) => {
+  if (e.target == main) {
+    modal.classList.add('hidden')
+    main.classList.remove('blurred')
+    header.classList.remove('blurred')
+    footer.classList.remove('blurred')
+  }
+})
 
 // To make the keyboard responsive for an english keyboard and a korean keyboard
 keyboardBtns.forEach((btn) => {
