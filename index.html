@@ -1,5 +1,5 @@
-<!-- TODO Fix viewport height issue -->
 <!-- TODO Brand Design -->
+<!-- TODO Upload to Netlify -->
 <!-- TODO Figure out a way to create the keyboard interactive for any language -->
 <!-- TODO Need to email another programmer for help (Kien?) -->
 <!-- TODO FEATURE - Add Swedish language to the game -->
@@ -226,11 +226,14 @@
           </div>
         </div>
       </section>
-      <div class="help">don't know how to change your keyboard input?</div>
+      <div class="help">
+        <a href="#">don't know how to change your language input?</a>
+      </div>
     </main>
 
     <div class="modalContainer hidden">
       <div class="modal">
+        <div class="modal__closeBtn">x</div>
         <div class="modal__textbox">
           <h2 class="modal__header">support the developer</h2>
           <p class="modal__text">
@@ -267,14 +270,12 @@
         <h3 class="newsletter__header">subscribe for more learning games</h3>
         <div class="newsletter__box">
           <label for="newsletter"></label>
-          <!-- I think I need to change the 'type' to 'submit' -->
           <input
             class="newsletter__input"
             type="text"
             id="newsletter"
             placeholder="enter your email here"
           />
-          <!-- Not sure if I need the 'id' here? -->
           <button class="newsletter__btn" type="button" id="submit">
             sign up
           </button>

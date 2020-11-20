@@ -10,7 +10,7 @@ html {
 .containerBox {
   display: grid;
   grid-template-columns: 1fr repeat(8, 2fr) 1fr;
-  grid-template-rows: 9vh 79vh 9vh;
+  grid-template-rows: 10vh minmax(75vh, min-content) 15vh;
 }
 
 header {
@@ -61,7 +61,7 @@ main {
 
 .translation {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   grid-column: 3 / 7;
   grid-row: 1 / span 1;
   margin-top: 43px;
@@ -160,6 +160,10 @@ main {
   letter-spacing: 0.1em;
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .skipBtn {
   border-radius: 10px;
   padding: 5px 15px;
@@ -168,6 +172,10 @@ main {
   margin-left: 10px;
   margin-bottom: 30px;
   letter-spacing: 0.1em;
+}
+
+.skipBtn:hover {
+  cursor: pointer;
 }
 
 .speed {
@@ -234,18 +242,25 @@ main {
   grid-row: 6 / span 1;
   justify-content: center;
   font-size: 0.9rem;
-  text-transform: capitalize;
-  text-decoration: underline;
-  opacity: 70%;
   margin-bottom: 70px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.help a {
+  text-decoration: none;
+  color: gray;
+}
+
+.help a:hover {
+  text-decoration: underline;
 }
 
 footer {
   display: grid;
   grid-template-columns: repeat(8, 2fr);
   grid-column: 2 / 10;
-  grid-row: 3 / span 1;
-  align-items: flex-end;
+  grid-row: 3 / -1;
 }
 
 .newsletter {
@@ -257,8 +272,7 @@ footer {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background: #fe6d73;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  padding: 5px;
 }
 
 .newsletter__box {
@@ -294,8 +308,13 @@ footer {
   letter-spacing: 0.1em;
 }
 
+.newsletter__btn:hover {
+  cursor: pointer;
+}
+
 .navFooter {
   grid-column: 7 / span 2;
+  align-self: flex-end;
 }
 
 .navFooter__unlisted {
@@ -361,9 +380,20 @@ footer {
   border: 5px solid #fe6d73;
 }
 
+.modal__closeBtn {
+  grid-column: 6;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: #ffca00;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .modal__textbox {
   grid-column: 2 / 6;
-  margin-top: 50px;
 }
 
 .modal__textbox h2 {
@@ -399,6 +429,11 @@ footer {
   height: 2rem;
   margin: 0 auto;
 }
+
+.confirmBtn:hover {
+  cursor: pointer;
+}
+
 /* LEAVE NEAR THE BOTTOM OF THE PAGE */
 
 .correct {

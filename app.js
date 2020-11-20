@@ -12,6 +12,7 @@ const skipBtn = document.getElementById('skip')
 const keyboardBtns = document.querySelectorAll('.keyboard--btns')
 const speed = document.getElementById('speed')
 const modal = document.querySelector('.modalContainer')
+const modalClose = document.querySelector('.modal__closeBtn')
 const donateBtn = document.querySelector('.donateBtn')
 const main = document.querySelector('.main')
 const header = document.querySelector('.header')
@@ -42,6 +43,13 @@ window.addEventListener('click', (e) => {
     header.classList.remove('blurred')
     footer.classList.remove('blurred')
   }
+})
+
+modalClose.addEventListener('click', () => {
+  modal.classList.add('hidden')
+  main.classList.remove('blurred')
+  header.classList.remove('blurred')
+  footer.classList.remove('blurred')
 })
 
 // To make the keyboard responsive for an english keyboard and a korean keyboard

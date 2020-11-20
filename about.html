@@ -11,7 +11,7 @@
     <title>Input: Learn a Language By Typing</title>
   </head>
   <body class="containerBox">
-    <header>
+    <header class="header">
       <div class="logo">
         <div class="logo__icon">input</div>
         <div class="logo__subheading">learn a language by typing</div>
@@ -20,11 +20,13 @@
         <ul class="navigation__unlisted">
           <li class="navigation__listItems"><a href="index.html">home</a></li>
           <li class="navigation__listItems"><a href="about.html">about</a></li>
-          <li class="navigation__listItems">donate</li>
+          <li class="navigation__listItems donateBtn">
+            <a href="#">donate</a>
+          </li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="main">
       <section class="about">
         <figure class="about__image">
           <img class="abbout__image--img"
@@ -54,8 +56,40 @@
         </div>
       </section>
     </main>
+    <div class="modalContainer hidden">
+      <div class="modal">
+        <div class="modal__textbox">
+          <h2 class="modal__header">support the developer</h2>
+          <p class="modal__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magnam
+            quos, minima mollitia rem cupiditate?
+          </p>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            facilis praesentium animi molestias, quaerat nostrum facere amet
+            alias perferendis error rerum! Itaque, sunt?
+          </p>
+        </div>
+        <div class="modal__donatebox">
+          <div class="modal__frequency">
+            <h3 class="modal__header">select frequency</h3>
+            <button class="btn">monthly</button>
+            <button class="btn">one-time</button>
+          </div>
+          <div class="modal__amount">
+            <h3 class="modal__header">select amount</h3>
+            <button class="btn">$1</button>
+            <button class="btn">$5</button>
+            <button class="btn">$10</button>
+            <button class="btn">$20</button>
+          </div>
+        </div>
+        <button class="confirmBtn btn">confirm</button>
+      </div>
+    </div>
 
-    <footer>
+    <footer class="footer">
       <div class="newsletter">
         <h3 class="newsletter__header">subscribe for more learning games</h3>
         <div class="newsletter__box">
