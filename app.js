@@ -16,6 +16,8 @@ const donateBtn = document.querySelector('.donateBtn')
 const main = document.querySelector('.main')
 const header = document.querySelector('.header')
 const footer = document.querySelector('.footer')
+const redDot = document.querySelector('.input__dot--red')
+const greenDot = document.querySelector('.input__dot--green')
 
 const modalAppear = () => {
   modal.classList.toggle('hidden')
@@ -144,6 +146,10 @@ const start = () => {
     const foreignWord = words[randomNo].korean
     const transWord = words[randomNo].english
 
+    // To add the red dot to the input field
+    greenDot.classList.add('hidden')
+    redDot.classList.remove('hidden')
+
     // To remove the small placeholder font setting at the beginning of the game
     inputBox.classList.remove('input__box--start')
 
@@ -199,6 +205,7 @@ textArea.addEventListener('input', () => {
     correctWord = false
   } else {
     correctWord = true
+    redDot.classList.remove('hidden')
   }
 
   arrayForeign.forEach((char, index) => {
@@ -211,10 +218,14 @@ textArea.addEventListener('input', () => {
       char.classList.add('correct')
       char.classList.remove('incorrect')
       correct = true
+      greenDot.classList.remove('hidden')
+      redDot.classList.add('hidden')
     } else {
       char.classList.remove('correct')
       char.classList.add('incorrect')
       correct = false
+      greenDot.classList.add('hidden')
+      redDot.classList.remove('hidden')
     }
   })
 })
