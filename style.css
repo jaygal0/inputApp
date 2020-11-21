@@ -193,6 +193,7 @@ main {
   background: #ffcb77;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  margin: 0px -30px;
 }
 
 .btn {
