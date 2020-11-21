@@ -240,6 +240,7 @@ main {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 20px;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .keyboard__top,
@@ -256,8 +257,8 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 45px;
-  width: 45px;
+  height: 50px;
+  width: 50px;
   border-radius: 5px;
   margin: 3px;
   padding: 5px;
@@ -267,6 +268,8 @@ main {
 .keyboard--english {
   text-transform: uppercase;
   color: white;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .keyboard--korean {
@@ -274,6 +277,7 @@ main {
   justify-content: flex-end;
   color: #ffca00;
   padding: 5px;
+  font-size: 1.2rem;
 }
 
 .keyboard--alt {
@@ -483,6 +487,8 @@ footer {
 
 .modal__header {
   color: white;
+  text-transform: capitalize;
+  margin-bottom: 5px;
 }
 .modal__frequency button {
   margin-top: 15px;
