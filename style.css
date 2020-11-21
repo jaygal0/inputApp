@@ -49,6 +49,11 @@ header {
 .navigation__listItems a:hover {
   border-bottom: 4px solid #ffcb77;
   padding-bottom: 3px;
+  transition: all ease-out 0.1s;
+}
+
+.navigation__listItems a:active {
+  color: #fe6d73;
 }
 
 main {
@@ -143,6 +148,7 @@ main {
 .filter__btns:hover {
   background: #31c8b9;
   color: white;
+  transition: all ease-out 0.3s;
 }
 
 .input__btn {
@@ -254,6 +260,11 @@ main {
 
 .help a:hover {
   text-decoration: underline;
+  transition: all ease-out 0.5;
+}
+
+.help a:active {
+  color: #fe6d73;
 }
 
 footer {
@@ -303,7 +314,7 @@ footer {
   padding: 5px 15px;
   background: #ffcb77;
   margin-left: 30px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 0.1em;
 }
@@ -327,8 +338,16 @@ footer {
 }
 
 .navFooter__listItems a {
-  color: black;
+  color: gray;
   text-decoration: none;
+}
+
+.navFooter__listItems a:hover {
+  color: black;
+}
+
+.navFooter__listItems a:active {
+  color: #fe6d73;
 }
 
 /* ABOUT US PAGE */
@@ -357,6 +376,11 @@ footer {
 
 .about__text {
   grid-column: 5 / span 3;
+}
+
+.about__text--header {
+  text-transform: capitalize;
+  margin-bottom: 7px;
 }
 
 /* DONATION MODAL */
@@ -390,6 +414,14 @@ footer {
   font-weight: 600;
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal__closeBtn:hover {
+  color: #fe6d73;
+}
+
+.modal__closeBtn:active {
+  color: #ffca00;
 }
 
 .modal__textbox {
@@ -454,6 +486,7 @@ footer {
 
 .blurred {
   filter: blur(5px);
+  transition: all ease-out 0.2s;
 }
 
 .activeFilter {
@@ -463,4 +496,11 @@ footer {
 
 .activeBtn {
   background: #ffcb77;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }

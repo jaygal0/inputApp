@@ -1,4 +1,3 @@
-// Need to target every element
 const hiddenDiv = document.getElementById('needsToBeHidden') // This needs to be hidden
 const foreign = document.querySelector('.translation__word--foreign')
 const translation = document.querySelector('.translation__word--english')
