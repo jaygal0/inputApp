@@ -16,6 +16,7 @@ const donateBtn = document.querySelector('.donateBtn')
 const main = document.querySelector('.main')
 const header = document.querySelector('.header')
 const footer = document.querySelector('.footer')
+const blackBackground = document.querySelector('.blackBackground')
 const redDot = document.querySelector('.input__dot--red')
 const greenDot = document.querySelector('.input__dot--green')
 
@@ -24,6 +25,7 @@ const modalAppear = () => {
   main.classList.toggle('blurred')
   header.classList.toggle('blurred')
   footer.classList.toggle('blurred')
+  blackBackground.classList.toggle('hidden')
 }
 
 // Let the modal appear after x amount of miliseconds
@@ -38,19 +40,22 @@ donateBtn.addEventListener('click', (e) => {
 
 // Allow the user to click outside the modal to close it
 window.addEventListener('click', (e) => {
-  if (e.target == main) {
+  if (e.target == blackBackground) {
     modal.classList.add('hidden')
     main.classList.remove('blurred')
     header.classList.remove('blurred')
     footer.classList.remove('blurred')
+    blackBackground.classList.add('hidden')
   }
 })
 
+// To close the modal while pressing the 'x' button
 modalClose.addEventListener('click', () => {
   modal.classList.add('hidden')
   main.classList.remove('blurred')
   header.classList.remove('blurred')
   footer.classList.remove('blurred')
+  blackBackground.classList.add('hidden')
 })
 
 // To make the keyboard responsive for an english keyboard and a korean keyboard
