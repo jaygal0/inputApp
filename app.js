@@ -19,6 +19,8 @@ const footer = document.querySelector('.footer')
 const blackBackground = document.querySelector('.blackBackground')
 const redDot = document.querySelector('.input__dot--red')
 const greenDot = document.querySelector('.input__dot--green')
+const hamburger = document.querySelector('.hamburger')
+const phoneNavBar = document.querySelector('.phoneNavigation')
 
 const modalAppear = () => {
   modal.classList.toggle('hidden')
@@ -27,6 +29,12 @@ const modalAppear = () => {
   footer.classList.toggle('blurred')
   blackBackground.classList.toggle('hidden')
 }
+
+// Activate the hamburger navbar
+hamburger.addEventListener('click', (e) => {
+  phoneNavBar.classList.add('showPhoneNav')
+  blackBackground.classList.remove('hidden')
+})
 
 // Let the modal appear after x amount of miliseconds
 setTimeout(() => {
@@ -46,6 +54,7 @@ window.addEventListener('click', (e) => {
     header.classList.remove('blurred')
     footer.classList.remove('blurred')
     blackBackground.classList.add('hidden')
+    phoneNavBar.classList.remove('showPhoneNav')
   }
 })
 
